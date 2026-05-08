@@ -12,6 +12,12 @@ export default function Projects() {
       repo: "https://github.com/leonardoxaviercf/projeto-agenda-django",
       demo: "http://136.119.163.248/"
     },
+    {
+      title: "CineReact",
+      img: "/img/projeto-cinema.png",
+      repo:  "https://github.com/leonardoxaviercf/projeto-cinema",
+      demo: "https://projeto-cinema-coral.vercel.app/"
+    },
     { 
       title: "Landing Page", 
       img: "/img/landing-page.png", 
