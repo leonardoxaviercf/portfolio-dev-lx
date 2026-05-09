@@ -1,3 +1,5 @@
+import RevealOnScroll from './RevealOnScroll';
+
 export default function Projects() {
   const meusProjetos = [
     {
@@ -6,21 +8,21 @@ export default function Projects() {
       repo: "https://github.com/leonardoxaviercf/projeto-barbearia-django",
       demo: null,
     },
-    { 
-      title: "Django Agenda", 
-      img: "/img/project-agenda.png", 
+    {
+      title: "Django Agenda",
+      img: "/img/project-agenda.png",
       repo: "https://github.com/leonardoxaviercf/projeto-agenda-django",
       demo: "http://136.119.163.248/"
     },
     {
       title: "CineReact",
       img: "/img/projeto-cinema.png",
-      repo:  "https://github.com/leonardoxaviercf/projeto-cinema",
+      repo: "https://github.com/leonardoxaviercf/projeto-cinema",
       demo: "https://projeto-cinema-coral.vercel.app/"
     },
-    { 
-      title: "Landing Page", 
-      img: "/img/landing-page.png", 
+    {
+      title: "Landing Page",
+      img: "/img/landing-page.png",
       repo: "https://github.com/leonardoxaviercf/Landing-Page",
       demo: "https://landingpagesimplelx.netlify.app/"
     },
@@ -35,25 +37,28 @@ export default function Projects() {
   return (
     <section id="projetos" className="full-page bg-light">
       <div className="container">
-        <h1 className="dark-title">Projetos em Destaque</h1>
+        <RevealOnScroll className="section-heading align-left">
+          <h1 className="dark-title">Projetos em Destaque</h1>
+        </RevealOnScroll>
+
         <div className="grid-projetos">
           {meusProjetos.map((proj, index) => (
-            <div className="card" key={index}>
+            <RevealOnScroll className="card" key={proj.title} delay={index * 90}>
               <div className="projeto-thumb">
                 <img src={proj.img} alt={proj.title} />
               </div>
               <div className="card-body">
                 <h3>{proj.title}</h3>
                 <div className="links">
-                    {proj.demo && (
-                        <a href={proj.demo} target="_blank" rel="noreferrer" className="btn">Ver Projeto</a>
-                    )}
-                    <a href={proj.repo} target="_blank" rel="noreferrer" className="btn secondary">
-                        Código
-                    </a>
+                  {proj.demo && (
+                    <a href={proj.demo} target="_blank" rel="noreferrer" className="btn">Ver Projeto</a>
+                  )}
+                  <a href={proj.repo} target="_blank" rel="noreferrer" className="btn secondary">
+                    Código
+                  </a>
                 </div>
               </div>
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

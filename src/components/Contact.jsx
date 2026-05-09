@@ -1,4 +1,5 @@
-import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import RevealOnScroll from './RevealOnScroll';
 
 export default function Contact() {
   const contatos = [
@@ -10,22 +11,30 @@ export default function Contact() {
 
   return (
     <section id="contato" className="full-page bg-dark">
-      <div className="container" style={{ textAlign: 'center' }}>
-        <h1>Vamos construir algo juntos?</h1>
-        <p style={{ marginBottom: '2rem' }}>Estou disponível para novos desafios em Backend e parcerias em projetos Open Source.</p>
-        
-        <div className="social-links" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
+      <div className="container contact-container">
+        <RevealOnScroll>
+          <h1>Vamos construir algo juntos?</h1>
+          <p>Estou disponível para novos desafios em Backend e parcerias em projetos Open Source.</p>
+        </RevealOnScroll>
+
+        <div className="social-links">
           {contatos.map((item, index) => (
-            <a 
-              key={index} 
-              href={item.link} 
-              target="_blank" 
-              className="contact-card"
-              style={{ '--brand-color': item.color }}
+            <RevealOnScroll
+              key={item.nome}
+              className="contact-reveal"
+              delay={index * 100}
             >
-              <span className="icon">{item.icon}</span>
-              {item.nome}
-            </a>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                className="contact-card"
+                style={{ '--brand-color': item.color }}
+              >
+                <span className="icon">{item.icon}</span>
+                {item.nome}
+              </a>
+            </RevealOnScroll>
           ))}
         </div>
       </div>
