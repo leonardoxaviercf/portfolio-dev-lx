@@ -12,7 +12,7 @@ export default function Projects() {
       title: "Django Agenda",
       img: "/img/project-agenda.png",
       repo: "https://github.com/leonardoxaviercf/projeto-agenda-django",
-      demo: "http://136.119.163.248/"
+      demo: "http://163.176.62.49/agenda/"
     },
     {
       title: "CineReact",
