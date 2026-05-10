@@ -6,7 +6,7 @@ export default function Projects() {
       title: "Django Barbearia",
       img: "/img/projeto-barbearia.png",
       repo: "https://github.com/leonardoxaviercf/projeto-barbearia-django",
-      demo: null,
+      demo: "http://163.176.62.49/barbearia/",
     },
     {
       title: "Django Agenda",
